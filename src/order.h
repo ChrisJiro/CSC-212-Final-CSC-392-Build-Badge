@@ -1,3 +1,5 @@
+#pragma once;
+
 //Creating order objects to hold order number, client name, and number of items in order
 #include <string>
 

@@ -17,10 +17,23 @@ warehouse::warehouse(string fName){
     string currLine;
     while(getline(inFile, currLine)){
         stringstream ss(currLine);
-        string clientName;
+        string clientName, name;
         int orderId, orderSize;
-        ss >> clientName >> orderId >> orderSize;
-        Order newOrder(orderId, orderSize, clientName);
+        ss >> name;
+        clientName = name;
+        ss >> name;
+        clientName += " " + name;
+        ss >> orderId >> orderSize;
+        Order* newOrder = new Order(orderId, orderSize, clientName);
         this->orders.push_back(newOrder);
+    }
+
+}
+
+void warehouse::printVector(){
+    for(Order* curr : this->orders){
+        cout << "Name:       " << curr->clientName << endl;
+        cout << "OrderID:    " << curr->orderId << endl;
+        cout << "Order Size: " << curr->orderSize << endl;
     }
 }

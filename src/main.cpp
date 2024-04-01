@@ -1,3 +1,4 @@
+#include "warehouse.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -11,6 +12,7 @@ int main(int argc, char *argv[]){
     string func = argv[2];
 
     //orders.txt is Names, Order ID, Number of Items
-    
+    warehouse myWarehouse(fName);
+    myWarehouse.printVector();
 
 }

@@ -8,12 +8,10 @@
 using namespace std;
 
 warehouse::warehouse(){
-    vector<Order> orders;
+
 }
 
 warehouse::warehouse(string fName){
-    vector<Order> orders;
-    
     // Read from the file and make a vector of order objects
     ifstream inFile(fName);
     string currLine;
@@ -21,9 +19,8 @@ warehouse::warehouse(string fName){
         stringstream ss(currLine);
         string clientName;
         int orderId, orderSize;
-        ss >>clientName >> orderId, orderSize;
-        Order newOrder(orderId, orderSize,clientName);
-        orders.push_back(newOrder);
-        
+        ss >> clientName >> orderId >> orderSize;
+        Order newOrder(orderId, orderSize, clientName);
+        this->orders.push_back(newOrder);
     }
 }

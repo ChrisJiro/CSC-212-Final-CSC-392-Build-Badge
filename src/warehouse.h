@@ -7,7 +7,10 @@ class warehouse{
     private:
         vector<Order> orders;
     public:
-    // Create Orders
+    // Constructors
     warehouse();
     warehouse(string fName);
+
+    // Public methods
+    void printOrder(Order currOrder);
 };

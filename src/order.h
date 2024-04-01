@@ -9,6 +9,7 @@ class Order{
         int orderSize;
         string clientName;
 
+        friend class warehouse;
     public:
         Order();
         Order(int orderId);

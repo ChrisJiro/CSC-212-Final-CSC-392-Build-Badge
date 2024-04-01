@@ -13,7 +13,8 @@ warehouse::warehouse(){
 
 warehouse::warehouse(string fName){
     vector<Order> orders;
-    // Read from the file
+    
+    // Read from the file and make a vector of order objects
     ifstream inFile(fName);
     string currLine;
     while(getline(inFile, currLine)){
@@ -23,5 +24,6 @@ warehouse::warehouse(string fName){
         ss >>clientName >> orderId, orderSize;
         Order newOrder(orderId, orderSize,clientName);
         orders.push_back(newOrder);
+        
     }
 }

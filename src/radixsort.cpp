@@ -4,6 +4,7 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 Order* RadixSort::findMax(vector<Order*> orders) {
     Order* maxOrder = orders[0];
     for (Order* currOrder : orders) {
@@ -24,3 +25,8 @@ vector<Order*> RadixSort::radixSort(vector<Order*> orders) {
     int digits = tempDigits.size();
 
 }
+=======
+int main(int argc, char *argv[]){
+    cout << "hi uwu";
+}
+>>>>>>> f588daa (added hi)

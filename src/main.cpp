@@ -14,4 +14,5 @@ int main(int argc, char *argv[]){
     //orders.txt is Names, Order ID, Number of Items
     warehouse myWarehouse(fName);
     myWarehouse.printVector();
+    Hello;
 }

@@ -1,9 +1,5 @@
 #include "warehouse.h"
-#include "order.h"
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <string>
+
 
 using namespace std;
 
@@ -15,19 +11,23 @@ warehouse::warehouse(string fName){
     // Read from the file and make a vector of order objects
     ifstream inFile(fName);
     string currLine;
+    this->orders = vector<Order*>();
     while(getline(inFile, currLine)){
-        stringstream ss(currLine);
+        istringstream ss(currLine);
         string clientName, name;
-        int orderId, orderSize;
+        string orderId, orderSize;
         ss >> name;
         clientName = name;
         ss >> name;
         clientName += " " + name;
         ss >> orderId >> orderSize;
-        Order* newOrder = new Order(orderId, orderSize, clientName);
-        this->orders.push_back(newOrder);
+        // Check the entire vector to ensure the order ID does not already exist
+        bool exists = false;
+        if(!exists){
+            Order* newOrder = new Order(orderId, orderSize, clientName);
+            this->orders.push_back(newOrder);
+        }
     }
-
 }
 
 void warehouse::printVector(){

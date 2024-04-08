@@ -3,6 +3,7 @@
 #include <vector>
 
 using namespace std;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 Order* RadixSort::findMax(vector<Order*> orders) {
@@ -30,3 +31,5 @@ int main(int argc, char *argv[]){
     cout << "hi uwu";
 }
 >>>>>>> f588daa (added hi)
+=======
+>>>>>>> a534800 (Updated order data types and warehouse)

@@ -29,6 +29,7 @@ warehouse::warehouse(string fName){
                 break;
             }
         }
+        // If the order ID doesn't already exist, then create a new order object and push to orders vector
         if(!exists){
             Order* newOrder = new Order(orderId, orderSize, clientName);
             this->orders.push_back(newOrder);
@@ -41,5 +42,6 @@ void warehouse::printVector(){
         cout << "Name:       " << curr->clientName << endl;
         cout << "OrderID:    " << curr->orderId << endl;
         cout << "Order Size: " << curr->orderSize << endl;
+        cout << endl;
     }
 }

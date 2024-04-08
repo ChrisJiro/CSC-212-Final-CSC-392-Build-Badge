@@ -7,15 +7,16 @@ using namespace std;
 
 class Order{
     private:
-        int orderId;
-        int orderSize;
+        string orderId;
+        string orderSize;
         string clientName;
 
         friend class warehouse;
+        friend class RadixSort;
     public:
         Order();
-        Order(int orderId);
-        Order(int orderId, int orderSize);
-        Order(int orderId, int orderSize, string clientName);
+        Order(string orderId);
+        Order(string orderId, string orderSize);
+        Order(string orderId, string orderSize, string clientName);
         ~Order();
 };

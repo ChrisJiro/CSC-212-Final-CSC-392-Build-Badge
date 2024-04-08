@@ -6,19 +6,19 @@ Order::Order(){
     this->clientName = "";
 }
 
-Order::Order(int orderId){
+Order::Order(string orderId){
     this->orderId = orderId;
     this->orderSize = "-1";
     this->clientName = "";
 }
 
-Order::Order(int orderId, int orderSize){
+Order::Order(string orderId, string orderSize){
     this->orderId = orderId;
     this->orderSize = orderSize;
     this->clientName = "";
 }
 
-Order::Order(int orderId, int orderSize, string clientName){
+Order::Order(string orderId, string orderSize, string clientName){
     this->orderId = orderId;
     this->orderSize = orderSize;
     this->clientName = clientName;

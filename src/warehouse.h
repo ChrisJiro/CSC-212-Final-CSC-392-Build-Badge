@@ -10,6 +10,7 @@ using namespace std;
 class warehouse{
     private:
         vector<Order*> orders;
+        friend class RadixSort;
     public:
         // Constructors
         warehouse();

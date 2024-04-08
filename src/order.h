@@ -12,6 +12,7 @@ class Order{
         string clientName;
 
         friend class warehouse;
+        friend class RadixSort;
     public:
         Order();
         Order(string orderId);

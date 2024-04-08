@@ -1,14 +1,14 @@
 #include "order.h"
 
 Order::Order(){
-    this->orderId = -1;
-    this->orderSize = -1;
+    this->orderId = "-1";
+    this->orderSize = "-1";
     this->clientName = "";
 }
 
 Order::Order(string orderId){
     this->orderId = orderId;
-    this->orderSize = -1;
+    this->orderSize = "-1";
     this->clientName = "";
 }
 

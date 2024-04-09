@@ -9,6 +9,7 @@ warehouse::warehouse(){
 
 warehouse::warehouse(string fName){
     // Read from the file and make a vector of order objects
+    RadixSort rSort;
     ifstream inFile(fName);
     string currLine;
     this->orders = vector<Order*>();
@@ -28,6 +29,8 @@ warehouse::warehouse(string fName){
             this->orders.push_back(newOrder);
         }
     }
+    //Sort orders by order size
+    this->orders = rSort.radixSort(orders);
 }
 
 void warehouse::printVector(){

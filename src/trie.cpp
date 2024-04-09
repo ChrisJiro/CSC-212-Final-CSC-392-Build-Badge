@@ -1,6 +1,8 @@
 #include "trie.h"
 
-<<<<<<< Updated upstream
+TrieNode::TrieNode(){
+    char string;
+}
 
 
 
@@ -19,8 +21,4 @@ bool TrieTree::search(string word){
 }
 bool TrieTree::searchPrefix(string prefix){
     
-=======
-TrieNode::TrieNode(){
-    char string;
->>>>>>> Stashed changes
 }

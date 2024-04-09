@@ -27,3 +27,6 @@ Order::Order(int orderId, int orderSize, string clientName){
 Order::~Order(){
     // Keep empty!
 }
+
+
+cout << "Order ID: " << this->orderId << std::endl;

@@ -22,12 +22,3 @@ class TrieTree{
         bool search(string word);
         bool searchPrefix(string prefix);
 };
-
-
-struct TrieNode 
-{ 
-     struct TrieNode *children[ALPHABET_SIZE];
-     // isEndOfWord is true if the node 
-     // represents end of a word 
-     bool isEndOfWord; 
-}; 

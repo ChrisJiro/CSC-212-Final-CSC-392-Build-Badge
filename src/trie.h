@@ -4,14 +4,9 @@
 
 using namespace std;
 
-class TrieNode{
-    private:
-
-    public:
-        TrieNode();
-
-
-};
+struct TrieNode{
+    struct TrieNode* 
+}
 
 class TrieTree{
     private:

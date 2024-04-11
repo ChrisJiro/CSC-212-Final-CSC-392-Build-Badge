@@ -23,7 +23,6 @@ warehouse::warehouse(string fName){
         ss >> orderId >> orderSize;
         // Check the entire vector to ensure the order ID does not already exist
         bool exists = false;
-<<<<<<< HEAD
         for(Order* curr : this->orders){
             if(curr->orderId == orderId){
                 exists = true;
@@ -31,8 +30,6 @@ warehouse::warehouse(string fName){
             }
         }
         // If the order ID doesn't already exist, then create a new order object and push to orders vector
-=======
->>>>>>> a534800 (Updated order data types and warehouse)
         if(!exists){
             Order* newOrder = new Order(orderId, orderSize, clientName);
             this->orders.push_back(newOrder);

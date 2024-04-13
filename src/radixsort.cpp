@@ -7,6 +7,7 @@ using namespace std;
 RadixSort::RadixSort() {
 }
 
+//find max
 Order* RadixSort::findMax(vector<Order*> orders) {
     Order* maxOrder = orders[0];
     for (Order* currOrder : orders) {
@@ -17,6 +18,7 @@ Order* RadixSort::findMax(vector<Order*> orders) {
     return maxOrder;
 }
 
+//count sort
 void RadixSort::countSort(vector<Order*>& orders, int exp) {
     vector<Order*> output(orders.size());
     int i, count[10] = {0};
@@ -36,6 +38,7 @@ void RadixSort::countSort(vector<Order*>& orders, int exp) {
         orders[i] = output[i];
 }
 
+//sort by radix
 vector<Order*> RadixSort::radixSort(vector<Order*> orders) {
     Order* largestOrder = findMax(orders);
     int max = stoi(largestOrder->orderSize);

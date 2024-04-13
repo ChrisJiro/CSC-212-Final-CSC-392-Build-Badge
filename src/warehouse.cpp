@@ -39,6 +39,8 @@ warehouse::warehouse(string fName){
 
     TrieTree idunno;
     idunno.insert("Hello");
+    cout << "Insert worked" << endl;
+    cout << "Searching for hello " << idunno.search("Hello") << endl;
 }
 
 void warehouse::printVector(){

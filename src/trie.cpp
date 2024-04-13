@@ -16,27 +16,25 @@ TrieTree::TrieTree(){
     this->root = new TrieNode();
 }
 
-
 void TrieTree::insert(TrieNode* node, string word){
     // Assign current working letter and remove first letter from word
     char currLetter;
     if(!word.empty()){
         currLetter = word[0];
         word.erase(word.begin());
-    }
-    // Check each Node of the vector to see if the letter exists
-    for(TrieNode* letterNode : node->lettersVec){
-        if(letterNode->letter == currLetter){
-            // Recursive call navigating to that letter
-            insert(letterNode, word);
-            return;
+        // Check each Node of the vector to see if the letter exists
+        for(TrieNode* letterNode : node->lettersVec){
+            if(letterNode->letter == currLetter){
+                // Recursive call navigating to that letter
+                insert(letterNode, word);
+                return;
+            }
         }
+        // If we navigate the whole vector and the letter doesn't exist
+        TrieNode *temp = new TrieNode(currLetter);
+        node->lettersVec.push_back(temp);
+        insert(temp, word);
     }
-    // If we navigate the whole vector and the letter doesn't exist
-    TrieNode *temp = new TrieNode(currLetter);
-    node->lettersVec.push_back(temp);
-    insert(temp, word);
-
     // If there are no more letters to insert, we handle the isWord Bool
     if(word.empty()){
         // If there are no letters in the vec
@@ -55,33 +53,33 @@ void TrieTree::insert(TrieNode* node, string word){
 
 // Recursive method
 bool TrieTree::search(TrieNode* node, string word){
-    if(word.size() == 0){
-        return true;
-    }
-
-    char currLetter = word[0];
-    
-    // Parse every letter following the first for recursive call
-    string newWord;
-    for(int i = 1; i < word.size() - 1; i++){
-        newWord += word[i];
-    }
-
-    // Check every value in the current node's vector to see if its letter matches currLetter
-    for(TrieNode* currNode : node->lettersVec){
-        if(currNode->letter == currLetter){
-            // Recursive call to that letter
-            if(search(currNode, word)){
-                return true;
-            }
+    char currLetter;
+    if(word.empty()){
+        // Check to see if the current node's node is a word
+        if(node->lettersVec[0]->isWord){
+            
         }
     }
+    currLetter = word[0];
+    word.erase(word.begin());
 
-    return false;
+    
+}
+
+string to_lower(string word){
+    string lowerWord;
+    for(char c : word){
+        lowerWord += tolower(c);
+    }
+    return lowerWord;
+}
+
+void TrieTree::insert(string word){
+    insert(this->root, to_lower(word));
 }
 
 bool TrieTree::search(string word){
-    return search(this->root, word);
+    return search(this->root, to_lower(word));
 
 }
 bool TrieTree::searchPrefix(string prefix){

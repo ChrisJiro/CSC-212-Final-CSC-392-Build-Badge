@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <string>
+#include <cctype>
+#include <iostream>
 
 using namespace std;
 
@@ -21,9 +23,10 @@ class TrieTree{
     private:
         TrieNode* root;
         bool search(TrieNode* node, string word);
+        void insert(TrieNode* node, string word);
     public:
         TrieTree();
-        void insert(TrieNode* node, string word);
+        void insert(string word);
         bool search(string word);
         bool searchPrefix(string prefix);
 };

@@ -73,34 +73,43 @@ bool TrieTree::search(TrieNode* node, string word){
     return false;
 }
 
-void TrieTree::remove(TrieNode* node, string word, int depth){
+void TrieTree::remove(TrieNode* node, string word){
+    // cout << word << " " << node->letter << endl;
     if(!node){
+        return;
+    }
+    if(word.empty()){
+        if(node->isWord){
+            node->isWord = false;
+        }
         return;
     }
     char c = word[0];
     word.erase(word.begin());
 
-    // If we're at the end of the word
-    if(depth == word.size()){
-        if(!node->lettersVec.empty() && node->lettersVec[0]->isWord == true){
-            node->lettersVec[0]->isWord = false;
-            // See if we can delete the node
-            if(node->lettersVec[0]->lettersVec.empty()){
-                delete node->lettersVec[0];
-                return;
-            }
-        }
-    }
-    else{
-        // Check every value in the vector
-        for(TrieNode* temp : node->lettersVec){
-            // If we found the next letter
+    if(!word.empty()){
+        //Iterate all the way down
+        for(int i = 0; i < node->lettersVec.size(); i++){
+            TrieNode* temp = node->lettersVec[i];
             if(temp->letter == c){
-                remove(temp, word, depth++);
-                int index = word[depth] - 'a';
+                remove(temp, word);
+                break;
             }
         }
     }
+    // If it is not a prefix
+    // If the current vector has children and the node is the last letter in the word
+    if(!node->lettersVec.empty() && node->lettersVec[0]->isWord == true){
+        // cout << "Deleting" << node->letter << endl;
+        node->lettersVec[0]->isWord = false;
+        // If the current word is not a prefix
+        if(node->lettersVec[0]->lettersVec.empty()){
+            delete node->lettersVec[0];
+            node->lettersVec.erase(node->lettersVec.begin());
+            node->lettersVec[0] = nullptr;
+        }
+    }
+    // As we return back up the stack, we delete if possible (There are no other nodes)
 }
 
 // bool TrieTree::searchPrefix(TrieNode* node, string prefix){
@@ -147,8 +156,5 @@ bool TrieTree::searchPrefix(string prefix){
     return search(this->root, to_lower(prefix));
 }
 void TrieTree::remove(string word){
-    if(search(this->root, word)){
-        return remove(this->root, to_lower(word), 0);
-    }
-    return;
+    return remove(this->root, to_lower(word));
 }

@@ -41,7 +41,14 @@ warehouse::warehouse(string fName){
     idunno.insert("Hello");
     cout << "Insert worked" << endl;
     cout << "Searching for hello " << idunno.search("Hello") << endl;
-    cout << "Searching for he prefix " << idunno.searchPrefix("He") << endl;
+    idunno.insert("Alex");
+    idunno.insert("Alan");
+    cout << "Searching for Alex and Alan:" << endl;
+    cout << idunno.search("Alex") << " " << idunno.search("Alan") << endl;
+    cout << "Removing Alex" << endl;
+    idunno.remove("Alex");
+    cout << idunno.search("Alex") << " " << idunno.search("Alan") << endl;
+    // cout << "Searching for he prefix " << idunno.searchPrefix("He") << endl;
 }
 
 void warehouse::printVector(){

@@ -23,7 +23,7 @@ class TrieTree{
         bool search(TrieNode* node, string word);
     public:
         TrieTree();
-        void insert(string word);
+        void insert(TrieNode* node, string word);
         bool search(string word);
         bool searchPrefix(string prefix);
 };

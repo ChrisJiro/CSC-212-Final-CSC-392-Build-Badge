@@ -1,6 +1,7 @@
 #include "warehouse.h"
 
 
+
 using namespace std;
 
 warehouse::warehouse(){
@@ -35,6 +36,9 @@ warehouse::warehouse(string fName){
             this->orders.push_back(newOrder);
         }
     }
+
+    TrieTree idunno;
+    idunno.insert("Hello");
 }
 
 void warehouse::printVector(){

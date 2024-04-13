@@ -1,4 +1,5 @@
 #include "order.h"
+#include "trie.h"
 #include <vector>
 #include <fstream>
 #include <iostream>

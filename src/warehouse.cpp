@@ -41,6 +41,7 @@ warehouse::warehouse(string fName){
     idunno.insert("Hello");
     cout << "Insert worked" << endl;
     cout << "Searching for hello " << idunno.search("Hello") << endl;
+    cout << "Searching for he prefix " << idunno.searchPrefix("He") << endl;
 }
 
 void warehouse::printVector(){

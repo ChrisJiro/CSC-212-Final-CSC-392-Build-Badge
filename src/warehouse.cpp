@@ -22,7 +22,7 @@ warehouse::warehouse(string fName){
         ss >> name;
         clientName += " " + name;
         ss >> orderId >> orderSize;
-        // Check the entire vector to ensure the order ID does not already exist
+        // Check the entire vector to ensure the order ID does not already exist (To be updated with bloom filter)
         bool exists = false;
         for(Order* curr : this->orders){
             if(curr->orderId == orderId){
@@ -39,16 +39,9 @@ warehouse::warehouse(string fName){
 
     TrieTree idunno;
     idunno.insert("Hello");
-    cout << "Insert worked" << endl;
-    cout << "Searching for hello " << idunno.search("Hello") << endl;
-    idunno.insert("Alex");
-    idunno.insert("Alan");
-    cout << "Searching for Alex and Alan:" << endl;
-    cout << idunno.search("Alex") << " " << idunno.search("Alan") << endl;
-    cout << "Removing Alex" << endl;
-    idunno.remove("Alex");
-    cout << idunno.search("Alex") << " " << idunno.search("Alan") << endl;
-    // cout << "Searching for he prefix " << idunno.searchPrefix("He") << endl;
+    cout << idunno.search("Hello") << endl;
+    idunno.remove("Hello");
+    cout << idunno.search("Hello") << endl;
 }
 
 void warehouse::printVector(){
@@ -56,6 +49,6 @@ void warehouse::printVector(){
         cout << "Name:       " << curr->clientName << endl;
         cout << "OrderID:    " << curr->orderId << endl;
         cout << "Order Size: " << curr->orderSize << endl;
-        cout << endl;
+        cout << "__________________________________________" << endl;
     }
 }

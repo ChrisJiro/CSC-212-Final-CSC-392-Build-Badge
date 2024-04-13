@@ -74,19 +74,14 @@ bool TrieTree::search(TrieNode* node, string word){
 }
 
 void TrieTree::remove(TrieNode* node, string word){
-    // cout << word << " " << node->letter << endl;
     if(!node){
-        return;
-    }
-    if(word.empty()){
-        if(node->isWord){
-            node->isWord = false;
-        }
         return;
     }
     char c = word[0];
     word.erase(word.begin());
+    // cout << word << endl;
 
+    // If there are still letters, navigate down
     if(!word.empty()){
         //Iterate all the way down
         for(int i = 0; i < node->lettersVec.size(); i++){
@@ -97,44 +92,31 @@ void TrieTree::remove(TrieNode* node, string word){
             }
         }
     }
-    // If it is not a prefix
-    // If the current vector has children and the node is the last letter in the word
-    if(!node->lettersVec.empty() && node->lettersVec[0]->isWord == true){
-        // cout << "Deleting" << node->letter << endl;
-        node->lettersVec[0]->isWord = false;
-        // If the current word is not a prefix
-        if(node->lettersVec[0]->lettersVec.empty()){
-            delete node->lettersVec[0];
-            node->lettersVec.erase(node->lettersVec.begin());
-            node->lettersVec[0] = nullptr;
+    // If our word is empty, we have navigated to the last node / We only want to
+    // Update the current word's 'isword' bool
+    if(word.empty()){
+        // Update our current node's child to be no longer a word
+        if(!node->lettersVec.empty()){
+            // cout << "Child is word: " << node->lettersVec[0]->isWord << endl;
+            node->lettersVec[0]->isWord = false;
+            // cout << "Child is word: " << node->lettersVec[0]->isWord << endl;
         }
     }
-    // As we return back up the stack, we delete if possible (There are no other nodes)
+    // Make a pointer to the current letter node
+    for(TrieNode* temp : node->lettersVec){
+        if(temp->letter == c){
+            // See if there are any children (if not we can delete that node)
+            for(int i = 0; i < temp->lettersVec.size(); i++){
+                TrieNode* subTemp = temp->lettersVec[i];
+                // The current child node has no children, we can delete it and remove it from our current vector
+                if(subTemp->lettersVec.empty()){
+                    delete subTemp;
+                    temp->lettersVec.erase(temp->lettersVec.begin() + i);
+                }
+            }
+        }
+    }
 }
-
-// bool TrieTree::searchPrefix(TrieNode* node, string prefix){
-//     char currLetter;
-//     if(prefix.empty()){
-//         // Check if there are still letters (not the end of a word)
-//         if(!node->lettersVec.empty()){
-//             TrieNode* temp = node->lettersVec[0];
-//             if(!temp->lettersVec.empty()){
-//                 return true;
-//             }
-//         }
-//         return false;
-//     }
-//     currLetter = prefix[0];
-//     prefix.erase(prefix.begin());
-//     // Iterate through whole vector to compare to letter
-//     for(TrieNode* temp : node->lettersVec){
-//         if(temp->letter == currLetter){
-//             // Recursive call to that node
-//             if(search(temp, prefix)) return true;
-//         }
-//     }
-//     return false;
-// }
 
 string to_lower(string word){
     string lowerWord;
@@ -151,9 +133,6 @@ void TrieTree::insert(string word){
 bool TrieTree::search(string word){
     return search(this->root, to_lower(word));
 
-}
-bool TrieTree::searchPrefix(string prefix){
-    return search(this->root, to_lower(prefix));
 }
 void TrieTree::remove(string word){
     return remove(this->root, to_lower(word));

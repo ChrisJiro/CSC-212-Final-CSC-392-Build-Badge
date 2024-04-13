@@ -25,11 +25,9 @@ class TrieTree{
         bool search(TrieNode* node, string word);
         void insert(TrieNode* node, string word);
         void remove(TrieNode* node, string word);
-        bool searchPrefix(TrieNode* node, string prefix);
     public:
         TrieTree();
         void insert(string word);
         bool search(string word);
         void remove(string word);
-        bool searchPrefix(string prefix);
 };

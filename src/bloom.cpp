@@ -37,18 +37,18 @@ void Bloom::insert(Order* order){
 }
 
 //Method to check if an order is already in the vector of orders
-bool Bloom::search(Order* order){
-    bool found = false;
-    for(Order* curr : this->orders){
-        if(curr->orderId == order->orderId){
-            found = true;
-            break;
-        }
-    }
-    return found;
+// bool Bloom::search(Order* order){
+//     bool found = false;
+//     for(Order* curr : this->orders){
+//         if(curr->orderId == order->orderId){
+//             found = true;
+//             break;
+//         }
+//     }
+//     return found;
 
 
-}
+// }
 
 //Method to delete an order from the vector
 void Bloom::deleteOrder(Order* order){

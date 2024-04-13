@@ -1,4 +1,6 @@
 #include "order.h"
+#include "trie.h"
+#include "cctype"
 #include <vector>
 #include <fstream>
 #include <iostream>

@@ -31,6 +31,7 @@ warehouse::warehouse(string fName){
     }
     //Sort orders by order size
     this->orders = rSort.radixSort(orders);
+    printVector();
 }
 
 void warehouse::printVector(){

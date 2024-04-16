@@ -1,5 +1,5 @@
 #include "bloom.h"
-
+//Teaching colleen git commands -chris
 //focusing on handling duplicates
 //
 

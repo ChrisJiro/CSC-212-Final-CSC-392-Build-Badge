@@ -13,6 +13,7 @@ class Order{
 
         friend class warehouse;
         friend class RadixSort;
+        friend class Bloom;
     public:
         Order();
         Order(string orderId);

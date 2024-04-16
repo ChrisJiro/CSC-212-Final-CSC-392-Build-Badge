@@ -16,6 +16,7 @@ class warehouse{
     private:
         vector<Order*> orders;
         friend class RadixSort;
+        friend class Bloom;
     public:
         // Constructors
         warehouse();

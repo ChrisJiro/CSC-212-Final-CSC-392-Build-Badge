@@ -19,7 +19,8 @@ The scaffolding of our project includes a GitHub repository setup for asynchrono
 *Implementation details to be continued...*
 
 ### Bloom Filters
-*Implementation details to be continued...*
+We implemented a bloom filter that can hash order ID values as well as insert, search, and reset within the table. The search algorithm checks for 
+order IDs that already exist in the database.
 
 ### Trie
 We implemented a trie tree capable of insertions, removals, and searches. Our insertion algorithm checks for existing characters at the correct height before adding new nodes. Utilizing recursive calls, we were able to achieve code that is much easier to read and understand.

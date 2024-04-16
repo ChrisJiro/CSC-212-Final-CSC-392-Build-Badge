@@ -9,17 +9,12 @@ using namespace std;
 class Bloom{
     private:
         vector<Order*> orders;
+        vector<int> table;
 
-        int hash(Order* order); //function to calculate hash value from order
-        void findDuplicates(Order* order);
-
-        void insert(Order* order); 
-        bool search(Order* order); //function to search for the order in the vector of orders
-        void deleteOrder(Order* order); //function to delete the order from the vector of orders
-
-
-    friend class Order;
-    friend class warehouse;
+        int hash(Order* order); //method to calculate hash value from order
+        void insert(Order* order); //method to insert an order into the hash table
+        bool search(Order* order); //method to search for the order in the vector of orders
+        void reset(); //method to reset the hash table
 
     public:
         Bloom();

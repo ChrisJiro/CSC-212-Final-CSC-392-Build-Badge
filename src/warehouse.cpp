@@ -36,6 +36,8 @@ warehouse::warehouse(string fName){
         if(!exists){
             Order* newOrder = new Order(orderId, orderSize, clientName);
             this->orders.push_back(newOrder);
+            // Insert the new order into the bloom filter
+            bloom->insert(newOrder);
         }
     }
     TrieTree idunno;

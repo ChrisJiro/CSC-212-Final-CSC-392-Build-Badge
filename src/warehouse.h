@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 #include "radixsort.h"
+#include "bloom.h"
 
 #pragma once
 

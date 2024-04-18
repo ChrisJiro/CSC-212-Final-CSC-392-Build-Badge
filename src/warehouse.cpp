@@ -23,10 +23,11 @@ warehouse::warehouse(string fName){
         ss >> name;
         clientName += " " + name;
         ss >> orderId >> orderSize;
-        // Check the entire vector to ensure the order ID does not already exist (To be updated with bloom filter)
+        // Check the entire vector to ensure the order ID does not already exist
+        Bloom* bloom = new Bloom (this->orders);
         bool exists = false;
         for(Order* curr : this->orders){
-            if(curr->orderId == orderId){
+            if(bloom->search(curr)){
                 exists = true;
                 break;
             }

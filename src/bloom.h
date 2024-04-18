@@ -16,6 +16,9 @@ class Bloom{
         bool search(Order* order); //method to search for the order in the vector of orders
         void reset(); //method to reset the hash table
 
+
+        friend class warehouse;
+
     public:
         Bloom();
         Bloom(vector<Order*> orders);

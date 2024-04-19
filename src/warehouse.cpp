@@ -14,6 +14,7 @@ warehouse::warehouse(string fName){
     ifstream inFile(fName);
     string currLine;
     this->orders = vector<Order*>();
+    Bloom* bloom = new Bloom (this->orders);
     while(getline(inFile, currLine)){
         istringstream ss(currLine);
         string clientName, name;
@@ -24,7 +25,6 @@ warehouse::warehouse(string fName){
         clientName += " " + name;
         ss >> orderId >> orderSize;
         // Check the entire vector to ensure the order ID does not already exist
-        Bloom* bloom = new Bloom (this->orders);
         bool exists = false;
         for(Order* curr : this->orders){
             if(bloom->search(curr)){

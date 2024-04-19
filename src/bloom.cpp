@@ -34,15 +34,14 @@ void Bloom::insert(Order* order){
 bool Bloom::search(Order* order){
     //if the table is not empty, continue
     if(this->table.size() != 0){
-        //loop through the hash table
-        for(int i = 0; i < table.size(); i++){
-            //if the index with this hash value is marked with a 1, then the order is most likely in the table
-            if(this->table[i] == 1){
-                return true;
-            }
+        //get hash value of the order
+        int index = hash(order);
+        //check if the index is already marked with a 1
+        if(this->table[index] == 1){
+            return true;
         }
     }
-    //if the index with this hash value is not found, the order is definitely not in the table
+    //if the index with this hash value is a 0, the order is definitely not in the table
     return false;
 }
 

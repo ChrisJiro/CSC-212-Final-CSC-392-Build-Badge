@@ -7,9 +7,8 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-    // CLA format is: (.exe) (Input file (data)) (function to perform)
+    // CLA format is: (.exe) (Input file (data))
     string fName = argv[1];
-    string func = argv[2];
 
     //orders.txt is Names, Order ID, Number of Items
     warehouse myWarehouse(fName);

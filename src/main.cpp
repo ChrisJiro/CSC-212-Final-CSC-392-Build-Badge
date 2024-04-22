@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+//Main to call upon warehouse driver code.
 int main(int argc, char *argv[]){
     // CLA format is: (.exe) (Input file (data))
     string fName = argv[1];

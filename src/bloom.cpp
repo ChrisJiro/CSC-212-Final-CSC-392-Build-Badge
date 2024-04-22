@@ -41,7 +41,9 @@ bool Bloom::search(Order* order){
         int index = hash(order);
         //check if the index is already marked with a 1
         if(this->table[index] == 1){
-            // cout << order->clientName << " hashes to value: " << index << endl;
+            cout << "____________________________________________________" << endl << endl;
+            cout << order->clientName << "'s order hashes to existing index: " << index << endl;
+            cout << "____________________________________________________" << endl;
             return true;
         }
     }

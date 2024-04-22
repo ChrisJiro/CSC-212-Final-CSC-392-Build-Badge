@@ -6,7 +6,7 @@ Bloom::Bloom(){
 
 //Constructor with Order object
 Bloom::Bloom(int fileSize){
-    int tableSize = -(fileSize * log(0.1)) / (log(2) * log(2));
+    int tableSize = -(fileSize * log(0.01)) / (log(2) * log(2));
     tableSize = ceil(tableSize);
     this->table = vector<bool>(tableSize, 0);
 }

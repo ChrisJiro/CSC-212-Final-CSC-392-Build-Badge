@@ -9,21 +9,24 @@ warehouse::warehouse(){
 }
 
 warehouse::warehouse(string fName){
-    // Read from the file and make a vector of order objects
+    //Create an instance of Radix Sort, call it rSort
     RadixSort rSort;
+    //Read from input file
     ifstream inFile(fName);
     int fileSize = 0;
     string currLine;
     this->orders = vector<Order*>();
-    // Get size of text file by line
+    //Get size of text file by line, call it fileSize
     while(getline(inFile, currLine)) {
         fileSize += 1;
     }
     inFile.close();
+    //Create an instance of Bloom, call it bFilter that takes in the fileSize
     Bloom bFilter(fileSize);
-    // Bloom* bloom = new Bloom (this->orders);
+    //Read from input file, again
     ifstream inFile2(fName);
     while(getline(inFile2, currLine)){
+        //While reading, parse into an Order* called newOrder
         istringstream ss(currLine);
         string clientName, name;
         string orderId, orderSize;
@@ -32,7 +35,9 @@ warehouse::warehouse(string fName){
         ss >> name;
         clientName += " " + name;
         ss >> orderId >> orderSize;
+        //Create an Order* of newOrder set equal to a newly created order where the Id, size, and name are passed
         Order* newOrder = new Order(orderId, orderSize, clientName);
+        // Line below is for debugging purposes
         // cout << newOrder->clientName << " " << newOrder->orderId << " " << newOrder->orderSize << endl;
         // Check the entire vector to ensure the order ID does not already exist
         bool exists = false;
@@ -47,13 +52,14 @@ warehouse::warehouse(string fName){
         }
     }
 
+    //Calls to TrieTree
     TrieTree idunno;
     idunno.insert("Hello");
     cout << idunno.search("Hello") << endl;
     idunno.remove("Hello");
     cout << idunno.search("Hello") << endl;
   
-    // Sort orders by order size
+    //Sort orders by order size
     this->orders = rSort.radixSort(orders);
     printVector();
     inFile2.close();

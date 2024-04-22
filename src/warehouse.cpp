@@ -51,17 +51,42 @@ warehouse::warehouse(string fName){
             bFilter.insert(newOrder);
         }
     }
-
-    //Calls to TrieTree
-    TrieTree idunno;
-    idunno.insert("Hello");
-    cout << idunno.search("Hello") << endl;
-    idunno.remove("Hello");
-    cout << idunno.search("Hello") << endl;
   
-    //Sort orders by order size
-    this->orders = rSort.radixSort(orders);
-    printVector();
+    TrieTree trie;
+    // Insert all names in all orders to trie tree
+    for(Order* curr : this->orders){
+        trie.insert(curr->clientName);
+    }
+  
+    // Request operation
+    cout << "Select operation to perform: "<< endl;
+    cout << "1 = search (By Name)" << endl;
+    cout << "2 = Print orders from least to greatest" << endl;
+    cout << "Operation: ";
+    int command;
+    cin >> command;
+    cout << endl;
+    if(command == 1){
+        cout << "Enter name: ";
+        string searchName, temp;
+        cin >> searchName;
+        cin >> temp;
+        searchName += " " + temp;
+        if(trie.search(searchName)){
+            cout << searchName << " exists" << endl;
+        }
+        else{
+            cout << searchName << " was not found" << endl;
+        }
+    }
+    else if(command == 2){
+        // Sort orders by order size
+        this->orders = rSort.radixSort(orders);
+        printVector();
+    }
+    else{
+        cout << "Invalid Operation" << endl;
+    }
     inFile2.close();
 }
 
@@ -72,5 +97,4 @@ void warehouse::printVector(){
         cout << "Order Size: " << curr->orderSize << endl;
         cout << "__________________________________________" << endl;
     }
-    cout << "End of print vector";
 }

@@ -1,29 +1,25 @@
 #pragma once
 //basic searches 
 //checks for 
-using namespace std;
 #include <string>
 #include <vector>
+#include <iostream>
+#include <cmath>
 #include "order.h"
+
+using namespace std;
 
 class Bloom{
     private:
-        vector<Order*> orders;
-        vector<int> table;
+        vector<bool> table;
 
         int hash(Order* order); //method to calculate hash value from order
         void insert(Order* order); //method to insert an order into the hash table
         bool search(Order* order); //method to search for the order in the vector of orders
-        void reset(); //method to reset the hash table
-
 
         friend class warehouse;
 
     public:
         Bloom();
-        Bloom(vector<Order*> orders);
-        
-
-
-
+        Bloom(int fileSize);
 };

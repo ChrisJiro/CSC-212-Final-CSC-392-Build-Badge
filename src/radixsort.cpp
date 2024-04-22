@@ -53,7 +53,6 @@ void RadixSort::countSort(vector<Order*>& orders, int place) {
     //Here we make swaps in the original order vector
     for (int i = 0; i < orders.size(); i++) {
         orders[i] = output[i];
-        cout << "Sorted " << orders[i] << endl;
     }
 }
 
@@ -67,6 +66,6 @@ vector<Order*> RadixSort::radixSort(vector<Order*> orders) {
     for (int place = 1; stoi(largestOrder->orderSize) / place > 0; place *= 10) {
         countSort(orders, place);
     }
-
+    
     return orders;
 }

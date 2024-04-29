@@ -23,3 +23,9 @@ jobs:
 
       - name: Build Jupyter Book
         run: jupyter-book build --all 212-docsite
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/html  

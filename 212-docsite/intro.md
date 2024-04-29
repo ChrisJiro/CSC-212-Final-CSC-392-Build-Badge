@@ -1,4 +1,4 @@
-# Introduction and Summary
+# :) Introduction and Summary
 
 Our group wanted to create a database that would allow a company to efficiently track 
 their customer’s information for their orders. Our program will allow users to check 

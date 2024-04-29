@@ -9,6 +9,7 @@ logo: sol.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  notebook_interface: classic
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -22,7 +23,7 @@ bibtex_bibfiles:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/ChrisJiro/CSC-212-Final-CSC-392-Build-Badge  # Online location of your book
-  path_to_book: 212-Docsite  # Optional path to your book, relative to the repository root
+  path_to_book: 212-docsite  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book

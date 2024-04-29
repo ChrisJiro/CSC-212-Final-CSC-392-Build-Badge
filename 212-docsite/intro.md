@@ -1,11 +1,8 @@
-# Welcome to your Jupyter Book
+# Introduction and Summary
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Our group wanted to create a database that would allow a company to efficiently track 
+their customer’s information for their orders. Our program will allow users to check 
+if a customer’s name exists in the database, sort customer orders by size, and check
+to see if there are duplicates in our system. Users are given an input prompt to select 
+an operation and are given the appropriate output based on their selection. 
 
-Check out the content pages bundled with this sample book to see more.
-
-```{tableofcontents}
-```

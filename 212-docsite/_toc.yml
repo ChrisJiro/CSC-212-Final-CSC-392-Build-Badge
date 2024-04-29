@@ -4,6 +4,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+  - file: microcosm
+    sections:
+      - file: microcosm_indepth
+  - file: datastructure
+    sections:
+      - file: bloomfilter
+      - file: radixsort
+      - file: trie

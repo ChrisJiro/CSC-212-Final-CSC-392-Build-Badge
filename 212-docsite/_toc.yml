@@ -6,9 +6,9 @@ root: intro
 chapters:
   - file: microcosm
     sections:
-      - file: microcosm_indepth
+      - file: microcosm/microcosm_indepth
   - file: datastructure
     sections:
-      - file: bloomfilter
-      - file: radixsort
-      - file: trie
+      - file: datastructure/bloomfilter
+      - file: datastructure/radixsort
+      - file: datastructure/trie

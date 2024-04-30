@@ -10,5 +10,5 @@ chapters:
   - file: datastructure
     sections:
       - file: datastructure/bloomfilter
-      - file: datastructure/radixsort
       - file: datastructure/trie
+      - file: datastructure/radixsort

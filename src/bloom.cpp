@@ -6,6 +6,7 @@
 Bloom::Bloom(){
 }
 
+// tag::constructor[]
 /**
  * @brief Construct a new Bloom:: Bloom object with a specified file size. The file size will be used in a calculation to determine what the table
  * size should be. The table of this new size will be then populated with zeros to simulate a bit array.
@@ -21,7 +22,9 @@ Bloom::Bloom(int fileSize){
     //Make the table equal to tableSize populated with zeros.
     this->table = vector<bool>(tableSize, 0);
 }
+// end::constructor
 
+// tag::hash[]
 /**
  * @brief This method calculates and returns the hash value of the current order. This is done by using fmod to perform modulus on h1,
  * where h1 is the orderId and h2 where it is the orderSize. 
@@ -35,7 +38,9 @@ int Bloom::hash(Order* currOrder){
     //Mod the order id by the size of the order.
     return fmod(h1, h2);
 }
+// end::hash[]
 
+// tag::insert[]
 /**
  * @brief This method inserts an order into the bloom filter at its hash value. 
  * 
@@ -50,7 +55,9 @@ void Bloom::insert(Order* order){
         this->table[index] = 1;
     }
 }
+// end::insert[]
 
+// tag::search[]
 /**
  * @brief This method searches through the bloom filter to see whether the current order already exists. It does so by checking the hash value and
  * seeing if the bit array at said hash value is already 1.
@@ -75,3 +82,4 @@ bool Bloom::search(Order* order){
     //if the index with this hash value is a 0, the order is definitely not in the table.
     return false;
 }
+// end::search[]

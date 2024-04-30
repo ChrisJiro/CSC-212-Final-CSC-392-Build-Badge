@@ -9,7 +9,7 @@ RadixSort::RadixSort() {
 
 // tag::findMax[]
 /**
- * @brief Hi jason This method finds and returns the order of maximum size from a vector of Order*s
+ * @brief This method finds and returns the order of maximum size from a vector of Order*s
  * 
  * @param orders The vector of orders to be searched through
  * @return Order* The order of maximum size gets returned

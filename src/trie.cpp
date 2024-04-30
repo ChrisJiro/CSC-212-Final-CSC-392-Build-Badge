@@ -23,6 +23,7 @@ TrieTree::TrieTree(){
     this->root = new TrieNode();
 }
 
+// tag::insert[]
 /**
  * @brief This method inserts a word into the Trie Tree. In our case we are inserting names within.
  * 
@@ -67,7 +68,9 @@ void TrieTree::insert(TrieNode* node, string word){
     }
     return;
 }
+// end::insert[]
 
+// tag::search[]
 /**
  * @brief This method searchs our Trie Tree to see if a word exists. In our case, names. We start at a specified node.
  * 
@@ -99,7 +102,9 @@ bool TrieTree::search(TrieNode* node, string word){
     }
     return false;
 }
+// end::search[]
 
+// tag::remove[]
 /**
  * @brief This method removes a word from the Trie Tree.
  * 
@@ -164,6 +169,7 @@ string to_lower(string word){
     }
     return lowerWord;
 }
+// end::remove[]
 
 /**
  * @brief Public insert method.

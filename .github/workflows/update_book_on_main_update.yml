@@ -37,6 +37,11 @@ jobs:
         path: _build/.jupyter_cache
         key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
 
+    # Clean the book
+    - name: Clean the book
+      run:
+        jupyter-book clean 212-docsite
+        
     # Build the book
     - name: Build the book
       run: |

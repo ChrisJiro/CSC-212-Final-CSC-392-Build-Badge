@@ -1,3 +1,5 @@
 # Radix Sort
 
-The program utilized radix sort to organize the orders by size from smallest to largest. It incorporates counting sort to compare each digit of each number in order to efficiently organize the order list by size of order.
+```{literalinclude} /CSC-212-Final-CSC-392-Build-Badge/src/radixsort.cpp
+:start-after: tag::findMax[]
+:end-before: end::findMax[]

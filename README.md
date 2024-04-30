@@ -1,6 +1,6 @@
 # Database for Company Logicstics
 
-### Website Link: https://chrisjiro.github.io/CSC-212-Final-CSC-392-Build-Badge/microcosm.html
+### Website Link: https://chrisjiro.github.io/CSC-212-Final-CSC-392-Build-Badge/
 
 ## Team Members
 - Jason Fopiano

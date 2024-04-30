@@ -7,6 +7,7 @@
 RadixSort::RadixSort() {
 }
 
+// tag::findMax[]
 /**
  * @brief This method finds and returns the order of maximum size from a vector of Order*s
  * 
@@ -27,7 +28,9 @@ Order* RadixSort::findMax(vector<Order*> orders) {
     }
     return maxOrder;
 }
+// end::findMax[]
 
+// tag::countSort[]
 /**
  * @brief This method performs count sort on our vector of orders at our current passed in digit place. Sorting is stable as well.
  * 
@@ -62,7 +65,9 @@ void RadixSort::countSort(vector<Order*>& orders, int place) {
         orders[i] = output[i];
     }
 }
+// end::countSort[]
 
+// tag::radixSort[]
 /**
  * @brief This method performs radix sort on our vector of orders. To do so, counting sort is called for an amount of iterations equal to the 
  * amount of digits within the max orders order size. We at each iteration move up a digit place.
@@ -80,3 +85,4 @@ vector<Order*> RadixSort::radixSort(vector<Order*> orders) {
     }
     return orders;
 }
+// end::radixSort[]

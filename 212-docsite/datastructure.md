@@ -1,5 +1,19 @@
-# Data Structure
+# Data Structures and Abstractions Utilized
 
-The program implements a driver class that is in charge of reading from the file passed in at runtime and calling the other data structure classes. It holds a dynamic array (vector) of order objects. Each order object holds the name of the buyer, the order ID, and the size of their order. 
+With our primary goals being database speed efficiency, we found it best to make implementations of Bloom Filter, Trie, and Radix Sort. The following will best explain why we chose each data structure.
 
-This driver code is what makes necessary calls to each method as needed. The needed methods are as follows...
+## Bloom Filter
+
+For our project, we implemented Bloom Filter. We eventually chose Bloom Filters due to their memory efficiency. Bloom Filters, while not exactly hash tables, use hash functions to represent set membership, which we found useful for checking duplicate orders by order ID in their warehouse database. A unique property of Bloom Filters is that elements cannot be removed, aligning with our need for a running list of orders that can’t be deleted once placed.
+
+## Trie
+
+The final choice of data structure for our project was a Trie. This decision was driven by our desire for efficiency and speed in our database. The Trie structure, with its ability to reuse characters added into the tree, reduces the number of nodes, making it particularly efficient for large datasets.
+
+## Radix Sort
+
+For our project, we implemented Radix Sort, a non-comparative sorting algorithm that excels with large datasets. It organizes data based on the digit place in the number, specifically the largest number’s digit count.
+
+## Driver Code
+
+The program employs a driver class responsible for reading from the file supplied at runtime and invoking the other data structure classes. It maintains a vector composed of order objects. Each of these order objects contains the buyer’s name, the order ID, and the quantity of their order.

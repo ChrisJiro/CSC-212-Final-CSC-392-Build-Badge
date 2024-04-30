@@ -22,7 +22,7 @@ Bloom::Bloom(int fileSize){
     //Make the table equal to tableSize populated with zeros.
     this->table = vector<bool>(tableSize, 0);
 }
-// end::constructor
+// end::constructor[]
 
 // tag::hash[]
 /**

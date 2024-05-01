@@ -6,6 +6,7 @@
 warehouse::warehouse(){
 }
 
+// tag::driver[]
 /**
  * @brief Construct a new warehouse::warehouse object and call driver code to populate with orders from file
  * 
@@ -123,7 +124,9 @@ warehouse::warehouse(string fName){
     //Delete Bloom Filter at end of this run.
     delete &bFilter;
 }
+// end::driver[]
 
+// tag:print[]
 /**
  * @brief Print the database of orders
  */
@@ -135,3 +138,4 @@ void warehouse::printVector(){
         cout << "__________________________________________" << endl;
     }
 }
+// end::print[]

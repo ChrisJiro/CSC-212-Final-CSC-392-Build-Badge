@@ -5,8 +5,6 @@ format: jb-book
 root: intro
 chapters:
   - file: microcosm
-    sections:
-      - file: microcosm/microcosm_indepth
   - file: datastructure
     sections:
       - file: datastructure/bloomfilter

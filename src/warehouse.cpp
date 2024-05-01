@@ -126,7 +126,7 @@ warehouse::warehouse(string fName){
 }
 // end::driver[]
 
-// tag:print[]
+// tag::print[]
 /**
  * @brief Print the database of orders
  */

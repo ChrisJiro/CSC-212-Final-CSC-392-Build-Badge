@@ -4,7 +4,7 @@ Our team aimed to develop a database designed to streamline a company’s tracki
 
 ## Collaboration Information
 
-The scaffolding of our project includes a GitHub repository setup for asynchronous collaboration. We've divided tasks among team members and created a driver class to handle command line arguments and process inputs from txt files.
+The scaffolding of our project includes a [GitHub repository](https://github.com/ChrisJiro/CSC-212-Final-CSC-392-Build-Badge) that we setup for asynchronous collaboration. We've divided tasks among team members and created a driver class to handle command line arguments and process inputs from txt files.
 
 ## Goal
 

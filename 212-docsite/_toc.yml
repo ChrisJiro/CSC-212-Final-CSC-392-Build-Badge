@@ -11,3 +11,4 @@ chapters:
       - file: datastructure/trie
       - file: datastructure/radixsort
   - file: driver
+  - file: sysreqs
